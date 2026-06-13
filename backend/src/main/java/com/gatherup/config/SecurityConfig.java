@@ -51,7 +51,7 @@ public class SecurityConfig {
                         .requestMatchers("POST", "/api/v1/auth/register", "/api/v1/auth/login",
                                                  "/api/v1/auth/refresh", "/api/v1/auth/logout").permitAll()
                         .requestMatchers("/swagger-ui/**", "/api-docs/**", "/swagger-ui.html").permitAll()
-                        .requestMatchers("GET", "/actuator/health").permitAll()
+                        .requestMatchers("GET", "/actuator/health", "/api/v1/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
