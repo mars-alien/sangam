@@ -1,0 +1,39 @@
+# Environment
+.env
+.env.local
+.env.production
+
+# Claude Code internal
+.claude/
+memory/
+
+# Maven
+target/
+*.class
+*.jar
+!**/test-jar/*.jar
+
+# Node
+node_modules/
+dist/
+.npm/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker volumes (local)
+docker/volumes/
