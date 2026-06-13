@@ -31,7 +31,7 @@ export const createEventSchema = z
     eventDate: z.string().min(1, 'Date is required'),
     eventTime: z.string().min(1, 'Time is required'),
     minCompanions: z.coerce.number().int().min(1).default(1),
-    maxCompanions: z.coerce.number().int().min(1, 'At least 1 companion').max(20),
+    maxCompanions: z.coerce.number().int().min(1, 'At least 1 companion').max(150),
     tags: z.string().optional(),
   })
   .refine((d) => d.maxCompanions >= d.minCompanions, {

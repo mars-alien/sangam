@@ -23,6 +23,6 @@ public record CreateEventRequest(
         @NotNull @Future Instant eventDate,
         Instant eventEndDate,
         @Min(1) int minCompanions,
-        @Min(1) @Max(20) int maxCompanions,
+        @Min(1) @Max(150) int maxCompanions,
         @Size(max = 5) Set<String> tags
 ) {}

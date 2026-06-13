@@ -20,7 +20,7 @@ const CATEGORIES = [
   { value: 'SOCIAL',  label: 'Social' },
   { value: 'OTHER',   label: 'Other' },
 ]
-const RADII = [5, 10, 25, 50]
+const RADII = [5, 10, 25, 50, 100, 250, 500, 1000, 2000, 4000]
 
 export default function HomePage() {
   const { location, loading: geoLoading, permissionDenied } = useGeolocation()
@@ -95,7 +95,7 @@ export default function HomePage() {
                 <SlidersHorizontal size={14} />
                 <select value={radiusKm} onChange={handleRadiusChange}>
                   {RADII.map((r) => (
-                    <option key={r} value={r}>{r} km</option>
+                    <option key={r} value={r}>{r >= 4000 ? 'All India (~4000 km)' : `${r} km`}</option>
                   ))}
                 </select>
               </div>

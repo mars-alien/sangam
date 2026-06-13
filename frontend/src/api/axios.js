@@ -38,7 +38,7 @@ api.interceptors.response.use(
 
     if (!refreshToken) {
       logout()
-      window.location.href = '/login'
+      window.dispatchEvent(new CustomEvent('session:expired'))
       return Promise.reject(error)
     }
 
@@ -67,7 +67,7 @@ api.interceptors.response.use(
     } catch (err) {
       processQueue(err, null)
       logout()
-      window.location.href = '/login'
+      window.dispatchEvent(new CustomEvent('session:expired'))
       return Promise.reject(err)
     } finally {
       isRefreshing = false

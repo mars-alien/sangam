@@ -21,6 +21,6 @@ public record UpdateEventRequest(
         @Future Instant eventDate,
         Instant eventEndDate,
         @Min(1) Integer minCompanions,
-        @Min(1) @Max(20) Integer maxCompanions,
+        @Min(1) @Max(150) Integer maxCompanions,
         @Size(max = 5) Set<String> tags
 ) {}

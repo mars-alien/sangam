@@ -27,11 +27,18 @@ export default function LoginPage() {
     },
   })
 
+  const sessionExpired = location.state?.sessionExpired
+
   if (isAuthenticated) return <Navigate to="/" replace />
 
   return (
     <div className="auth-page">
       <div className="auth-card">
+        {sessionExpired && (
+          <div className="session-expired-banner">
+            Your session expired — please sign in again.
+          </div>
+        )}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
           <MapPin size={24} color="var(--primary)" />
           <span style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--primary)' }}>Sangam</span>
