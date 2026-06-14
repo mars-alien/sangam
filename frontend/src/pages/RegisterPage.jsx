@@ -20,7 +20,11 @@ export default function RegisterPage() {
       navigate('/', { replace: true })
     },
     onError: (err) => {
-      setApiError(err.response?.data?.message || 'Registration failed. Please try again.')
+      if (!err.response) {
+        setApiError('Cannot reach server — check your internet connection and try again.')
+      } else {
+        setApiError(err.response.data?.message || 'Registration failed. Please try again.')
+      }
     },
   })
 

@@ -53,9 +53,11 @@
   border-radius: var(--radius-sm);
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: border-color 0.15s, box-shadow 0.15s;
   outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .input-field:focus {
   border-color: var(--primary);
@@ -491,7 +493,7 @@
   .navbar-logo-text { display: none; }
   .navbar-username { display: none; }
   .nav-link-text { display: none; }
-  .navbar-link { padding: 6px 8px; }
+  .navbar-link { padding: 6px 8px; min-height: 44px; }
 
   /* Page padding */
   .page { padding: 16px 14px; }
@@ -506,8 +508,13 @@
   /* Grid */
   .events-grid { grid-template-columns: 1fr; gap: 12px; }
 
-  /* Auth */
-  .auth-card { padding: 24px 20px; }
+  /* Auth — prevent iOS zoom (must be 16px+), bigger touch targets */
+  .auth-card { padding: 28px 20px; }
+  .auth-page { padding: 16px; align-items: flex-start; padding-top: 40px; }
+  .input-field { font-size: 16px; min-height: 48px; }
+  .select-wrap select { font-size: 16px; min-height: 48px; }
+  .btn { min-height: 44px; }
+  .btn-full { min-height: 48px; font-size: 1rem; }
 
   /* Form */
   .form-row { grid-template-columns: 1fr; }
@@ -516,12 +523,15 @@
   .detail-title { font-size: 1.4rem; }
 
   /* Modal */
-  .modal { padding: 20px; }
+  .modal { padding: 20px; margin: 0; border-radius: var(--radius-md); }
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 }
 
 /* ── Small phones ─ max 400px ── */
 @media (max-width: 400px) {
   .btn-sm { padding: 5px 10px; font-size: 0.75rem; }
   .detail-title { font-size: 1.25rem; }
-  .auth-card { padding: 20px 14px; }
+  .auth-card { padding: 20px 16px; }
+  .auth-title { font-size: 1.4rem; }
 }

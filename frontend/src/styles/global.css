@@ -36,11 +36,18 @@ img {
 button {
   cursor: pointer;
   font-family: inherit;
+  touch-action: manipulation;
+}
+
+a {
+  touch-action: manipulation;
 }
 
 input, textarea, select {
   font-family: inherit;
   font-size: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #root {

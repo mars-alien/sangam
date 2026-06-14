@@ -23,7 +23,11 @@ export default function LoginPage() {
       navigate(from, { replace: true })
     },
     onError: (err) => {
-      setApiError(err.response?.data?.message || 'Login failed. Please try again.')
+      if (!err.response) {
+        setApiError('Cannot reach server — check your internet connection and try again.')
+      } else {
+        setApiError(err.response.data?.message || 'Login failed. Please try again.')
+      }
     },
   })
 
